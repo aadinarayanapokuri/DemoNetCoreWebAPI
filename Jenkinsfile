@@ -17,11 +17,9 @@ pipeline {
     //bat 'dotnet build C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\HRMPipelines\\jenkins-demo\\HRM\\HRM.sln --configuration Release'  
    }  
   }
-stage('Docker Build') {
-            steps {
-                script {
-                   powershell "docker build -t aspnetcorewebapi:latest ."
-                }
+stage('Docker') {
+    steps {    
+     bat "docker build -t aspnetcorewebapi:latest ."    
             }
         }
 }
