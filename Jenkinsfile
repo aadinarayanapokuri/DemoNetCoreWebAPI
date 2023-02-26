@@ -1,7 +1,9 @@
 pipeline {  
  agent any  
  environment {  
-  dotnet = 'C:\\Program Files\\dotnet\\dotnet.exe'  
+  dotnet = 'C:\\Program Files\\dotnet\\dotnet.exe' 
+  DATE = new Date().format('yy.M')
+  TAG = "${DATE}.${BUILD_NUMBER}"
    }  
  stages {  
   stage('Checkout') {  
@@ -15,10 +17,12 @@ pipeline {
     //bat 'dotnet build C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\HRMPipelines\\jenkins-demo\\HRM\\HRM.sln --configuration Release'  
    }  
   }
-  stage('Docker Build') {  
-   steps {
-       bat 'docker build -t ramudammu/aspnetcorewebapi:latest .'
-   }  
-  } 
+stage('Docker Build') {
+            steps {
+                script {
+                    docker.build("ramudammu/aspnetcorewebapi:${TAG}")
+                }
+            }
+        }
 }
 }
