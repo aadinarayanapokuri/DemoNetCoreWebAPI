@@ -20,7 +20,7 @@ pipeline {
 stage('Docker Build') {
             steps {
                 script {
-                    docker.build("ramudammu/aspnetcorewebapi:${TAG}")
+                   powershell "docker build -t aspnetcorewebapi:latest ."
                 }
             }
         }
