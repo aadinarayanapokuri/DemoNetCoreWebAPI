@@ -18,7 +18,7 @@ stage('Docker') {
         }
 stage('image push to ECR') {
     steps {    
-     sh "aws ecr get-login-password --region region | docker login --username AWS --password-stdin 670166063118.dkr.ecr.ap-northeast-1.amazonaws.com"    
+     sh "aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 670166063118.dkr.ecr.ap-northeast-1.amazonaws.com"    
             }
         }
 }
