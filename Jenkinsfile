@@ -8,7 +8,7 @@ pipeline {
  stages {  
   stage('Checkout') {  
    steps {
-       git credentialsId: 'github-cred', url: 'git@github.com:aadinarayanapokuri/DemoNetCoreWebAPI.git', branch: 'main'
+       git credentialsId: 'ubuntu', url: 'git@github.com:aadinarayanapokuri/DemoNetCoreWebAPI.git', branch: 'main'
    }  
   } 
 stage('Docker') {
