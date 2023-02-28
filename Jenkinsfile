@@ -13,7 +13,7 @@ pipeline {
   } 
 stage('Docker') {
     steps {    
-     bat "docker build -t aspnetcorewebapi:latest ."    
+     sh "docker build -t aspnetcorewebapi:latest ."    
             }
         }
 }
