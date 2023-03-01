@@ -7,7 +7,7 @@ pipeline {
   AWS_ACCOUNT_ID="670166063118"
   AWS_DEFAULT_REGION="ap-northeast-1"
   IMAGE_REPO_NAME="dotnetdemo"
-  IMAGE_TAG="v1"
+  IMAGE_TAG="${DATE}.${BUILD_NUMBER}"
   REPOSITORY_URI = "670166063118.dkr.ecr.ap-northeast-1.amazonaws.com/dotnetdemo"
    }  
  stages {  
