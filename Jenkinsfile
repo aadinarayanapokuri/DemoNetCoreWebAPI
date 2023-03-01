@@ -26,7 +26,9 @@ pipeline {
   } 
 stage('Docker') {
     steps {    
-     sh "docker build -t aspnetcorewebapi:latest ."    
+     sh "script {
+          dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
+        }   
             }
         }
   stage('Pushing to ECR') {
