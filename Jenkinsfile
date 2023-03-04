@@ -9,17 +9,6 @@ pipeline {
   IMAGE_REPO_NAME="dotnetdemo"
   IMAGE_TAG="${DATE}.${BUILD_NUMBER}"
   REPOSITORY_URI = "670166063118.dkr.ecr.ap-northeast-1.amazonaws.com/dotnetdemo"
-  POM_VERSION = getVersion()
-  JAR_NAME = getJarName()
-  AWS_ECR_REGION = 'ap-northeast-1'
-  AWS_ECS_SERVICE = 'ch-dev-user-api-service'
-  AWS_ECS_TASK_DEFINITION = 'ch-dev-user-api-taskdefinition'
-  AWS_ECS_COMPATIBILITY = 'FARGATE'
-  AWS_ECS_NETWORK_MODE = 'bridge'
-  AWS_ECS_CPU = '256'
-  AWS_ECS_MEMORY = '512'
-  AWS_ECS_CLUSTER = 'ch-dev'
-  AWS_ECS_TASK_DEFINITION_PATH = './ecs/container-definition-update-image.json'
    }  
  stages {  
  stage('Logging into AWS ECR') {
