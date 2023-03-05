@@ -48,7 +48,7 @@ stage('Docker') {
          }
         }
       }
- /*  stage('Deploy in ECS') {
+   stage('Deploy in ECS') {
   steps {
     withCredentials([string(credentialsId: 'AWS_EXECUTION_ROL_SECRET', variable: 'AWS_ECS_EXECUTION_ROL'),string(credentialsId: 'AWS_REPOSITORY_URL_SECRET', variable: 'AWS_ECR_URL')]) {
       script {
@@ -58,6 +58,6 @@ stage('Docker') {
         sh("/usr/local/bin/aws ecs update-service --cluster ${AWS_ECS_CLUSTER} --service ${AWS_ECS_SERVICE} --task-definition ${AWS_ECS_TASK_DEFINITION}:${taskRevision}")
       }
     }
-  }*/
+  }
 }
 }
